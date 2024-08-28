@@ -1,0 +1,54 @@
+var _a;
+import { Tooltip } from "@bokehjs/models/ui/tooltip";
+import { build_view } from "@bokehjs/core/build_views";
+import { CheckboxButtonGroup as bkCheckboxButtonGroup, CheckboxButtonGroupView as bkCheckboxButtonGroupView, } from '@bokehjs/models/widgets/checkbox_button_group';
+export class CheckboxButtonGroupView extends bkCheckboxButtonGroupView {
+    *children() {
+        yield* super.children();
+        if (this.tooltip != null)
+            yield this.tooltip;
+    }
+    async lazy_initialize() {
+        await super.lazy_initialize();
+        const { tooltip } = this.model;
+        if (tooltip != null)
+            this.tooltip = await build_view(tooltip, { parent: this });
+    }
+    remove() {
+        this.tooltip?.remove();
+        super.remove();
+    }
+    render() {
+        super.render();
+        const toggle = (visible) => {
+            this.tooltip?.model.setv({
+                visible,
+            });
+        };
+        let timer;
+        this.el.addEventListener("mouseenter", () => {
+            timer = setTimeout(() => toggle(true), this.model.tooltip_delay);
+        });
+        this.el.addEventListener("mouseleave", () => {
+            clearTimeout(timer);
+            toggle(false);
+        });
+    }
+}
+CheckboxButtonGroupView.__name__ = "CheckboxButtonGroupView";
+export class CheckboxButtonGroup extends bkCheckboxButtonGroup {
+    constructor(attrs) {
+        super(attrs);
+    }
+}
+_a = CheckboxButtonGroup;
+CheckboxButtonGroup.__name__ = "CheckboxButtonGroup";
+CheckboxButtonGroup.__module__ = "panel.models.widgets";
+(() => {
+    _a.prototype.default_view = CheckboxButtonGroupView;
+    _a.define(({ Nullable, Ref, Number }) => ({
+        tooltip: [Nullable(Ref(Tooltip)), null],
+        tooltip_delay: [Number, 500],
+    }));
+})();
+//# sourceMappingURL=checkbox_button_group.js.map
