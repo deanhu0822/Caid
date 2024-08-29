@@ -4,6 +4,10 @@
 
 ### Overview
 
+My aim is to redefine the connection between digital and the physical world. 
+Our MVP converts natural language into dimensionally accurate CAD models, enabling rapid prototyping for all.
+
+
 https://github.com/user-attachments/assets/7144b335-44f3-4bd9-8956-65124c38e4d4
 
 
