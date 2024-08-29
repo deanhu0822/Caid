@@ -1,6 +1,6 @@
 ## Caid
 
-### This is Version 0.
+### Version 0
 
 ### Overview
 
