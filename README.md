@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/7144b335-44f3-4bd9-8956-65124c38e4d4
   
 - **User-Friendly Interface**: We believe in making complex technology accessible. Caid’s interface is designed to be intuitive, eliminating the need for specialized knowledge in CAD software.
   
-- **Exportable Models**: Once you complete each design, you can easily export your CAD models in various formats compatible with your preferred manufacturing tools (STL,
+- **Exportable Models**: Once you complete each design, you can easily export your CAD models in various formats compatible with your preferred manufacturing tools (STL,OBJ).
 
 ### Getting Started
 
