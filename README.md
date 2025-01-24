@@ -95,4 +95,4 @@ As this is the initial version of Caid, we welcome feedback, suggestions, and co
 
 ### Support
 
-If you need help or have any questions, please reach out to dev@caid.ai
+If you need help or have any questions, please reach out!
